@@ -12,7 +12,7 @@ services:
       - /home/fran/sabnzbd/data:/config
       - /home/fran/sabnzbd/downloads:/downloads #optional
       - /home/fran/sabnzbd/incomplete-downloads:/incomplete-downloads #optional
-      - ${FRAN_MEDIA}/FranMedia
+      - ${FRAN_MEDIA}:/FranMedia
     ports:
       - 8080:8080
     restart: always
