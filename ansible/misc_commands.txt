@@ -1,0 +1,5 @@
+local to remote scp: scp "/Users/fpolig01/Desktop/Projects/go pro run/GP011403.MP4" fran@franrpi.local:/home/fran/media/
+
+etc/fstab for usb on rpi4 
+
+/dev/sda2 /media/exfat exfat defaults,nofail,umask=0000 0 0

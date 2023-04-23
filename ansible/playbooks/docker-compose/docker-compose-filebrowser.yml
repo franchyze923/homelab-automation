@@ -1,0 +1,15 @@
+version: "3.4"
+services:
+  file-browser:
+    image: filebrowser/filebrowser
+    container_name: file-browser
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Eastern
+    volumes:
+      - ${FRAN_MEDIA}:/FranMedia
+      - ${FRANARCHIVES}:/FranArchives/
+    ports:
+      - 8077:80
+    restart: always

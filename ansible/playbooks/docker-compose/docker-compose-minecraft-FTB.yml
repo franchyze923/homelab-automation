@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mc-ftb:
+    image: itzg/minecraft-server:java8-multiarch
+    ports:
+      - 25566:25565   
+    environment:
+      EULA: "TRUE"
+      TYPE: "FTBA"
+      FTB_MODPACK_ID: 35
+      MOTD: "Welcome to Fran's FTB Minecraft Server!"
+      WHITELIST: ${MINECRAFT_WHITELIST}
+      MEMORY: ""
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      # attach a directory relative to the directory containing this compose file
+      - ./minecraft-ftb-data:/data 

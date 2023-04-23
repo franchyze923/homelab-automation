@@ -1,0 +1,6 @@
+.terraform/
+terraform/
+credentials.auto.tfvars
+secret-vars.yml
+.env
+ansible/ansible.cfg
