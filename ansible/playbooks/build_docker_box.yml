@@ -32,7 +32,6 @@
       - /home/fran/wireguard/lib/modules 
       - /home/fran/duckdns/config         
 
-
     - name: install cifs-utils
       ansible.builtin.package:
         name: cifs-utils
@@ -58,7 +57,6 @@
         src: "{{ nas_mount_src }}"
         opts: "{{ nas_mount_opts }}"
  
-
     - name: copy docker-compose files
       copy: src={{ item.src }} dest={{ item.dest }}
       with_items:
