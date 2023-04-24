@@ -92,11 +92,13 @@ sudo docker-compose -f /home/fran/minecraft/docker-compose.yml --env-file /home/
 sudo docker-compose -f /home/fran/minecraft/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating Minecraft!"
 
-echo "Updating Minecraft FTB.."
-sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env stop
-sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env rm -f
-sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env pull
-sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env up -d
-echo "Done updating Minecraft FTB!"
+# Not hosting this currently 
+
+# echo "Updating Minecraft FTB.."
+# sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env stop
+# sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env rm -f
+# sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env pull
+# sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env up -d
+# echo "Done updating Minecraft FTB!"
 
 echo "Done Updating everything!!!"
