@@ -1,12 +1,24 @@
 - hosts: "*"
+
+  vars_files:
+    - ../secret-vars.yml
+    - ../dependencies-vars.yml
+
   become: yes
   roles:
     - geerlingguy.docker
+
   tasks:
     - name: apt
       apt:
         update_cache: yes
         upgrade: 'yes'
+
+    - name: Install Dependencies
+      apt:
+        name: "{{ host_dependencies }}"
+        state: latest
+        update_cache: yes      
 
     - name: Creates directory
       file:
@@ -31,23 +43,6 @@
       - /home/fran/wireguard/config   
       - /home/fran/wireguard/lib/modules 
       - /home/fran/duckdns/config         
-
-    - name: install cifs-utils
-      ansible.builtin.package:
-        name: cifs-utils
-        state: present    
-
-    - name: install linux-generic
-      apt: 
-        name: linux-generic
-        state: latest
-        update_cache: yes
-
-    - name: install dos2unix
-      apt: 
-        name: dos2unix
-        state: latest
-        update_cache: yes
 
     - name: mount FranMedia
       mount:
@@ -85,5 +80,5 @@
     - name: run dos2unix on update_docker_container.sh script incase script was modified in windows
       command: dos2unix -k -o /home/fran/update_docker_containers.sh 
 
-    - name: Execute update_docker_containers.sh
-      command: sh /home/fran/update_docker_containers.sh  
+    #- name: Execute update_docker_containers.sh
+      #command: sh /home/fran/update_docker_containers.sh  

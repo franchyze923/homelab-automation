@@ -1,0 +1,4 @@
+host_dependencies:
+  - dos2unix
+  - linux-generic
+  - cifs-utils

@@ -20,4 +20,4 @@ then install ansible dependencies
 
 Finally, run the ansible playbook using the following command
 
-`ansible-playbook ./playbooks/build_docker_box.yml --user fran -i ./inventory/hosts -e @secret-vars.yml`
+`ansible-playbook ./playbooks/build_docker_box.yml --user fran -i ./inventory/hosts`
