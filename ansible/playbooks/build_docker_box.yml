@@ -80,5 +80,5 @@
     - name: run dos2unix on update_docker_container.sh script incase script was modified in windows
       command: dos2unix -k -o /home/fran/update_docker_containers.sh 
 
-    #- name: Execute update_docker_containers.sh
-      #command: sh /home/fran/update_docker_containers.sh  
+    - name: Execute update_docker_containers.sh
+      command: sh /home/fran/update_docker_containers.sh  
