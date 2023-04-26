@@ -14,4 +14,4 @@ services:
       - ${FRAN_MUSIC}:/music
       - ${FRAN_MOVIES}:/movies
       - ${FRAN_TV}:/tvshows
-    restart: always
+    restart: unless-stopped
