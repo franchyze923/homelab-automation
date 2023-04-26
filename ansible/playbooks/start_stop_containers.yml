@@ -1,0 +1,5 @@
+- hosts: "*"
+  become: yes
+  tasks:
+    - name: Execute update_docker_containers.sh
+      command: sh /home/fran/update_docker_containers.sh  

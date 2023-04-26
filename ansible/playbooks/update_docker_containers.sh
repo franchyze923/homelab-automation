@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "Updating Plex..."
-sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env stop
-sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env rm -f
-sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env pull
-sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env up -d
-echo "Done Updating Plex!"
+# Hosting on TrueNAS Scale now
+
+# echo "Updating Plex..."
+# sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env stop
+# sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env rm -f
+# sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env pull
+# sudo docker-compose -f /home/fran/plex/docker-compose.yml --env-file /home/fran/.env up -d
+# echo "Done Updating Plex!"
 
 echo "Updating Tautulli..."
 sudo docker-compose -f /home/fran/tautulli/docker-compose.yml --env-file /home/fran/.env stop
