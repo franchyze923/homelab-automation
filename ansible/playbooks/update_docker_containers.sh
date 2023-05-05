@@ -101,6 +101,12 @@ sudo docker-compose -f /home/fran/youtubedl/docker-compose.yml --env-file /home/
 sudo docker-compose -f /home/fran/youtubedl/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating Youtubedl!"
 
+echo "Updating PhotoPrism.."
+sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env up -d
+echo "Done updating PhotoPrism!"
 # Not hosting this currently 
 
 # echo "Updating Minecraft FTB.."

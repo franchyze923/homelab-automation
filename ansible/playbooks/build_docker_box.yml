@@ -44,6 +44,7 @@
       - /home/fran/wireguard/lib/modules 
       - /home/fran/duckdns/config   
       - /home/fran/youtubedl/config      
+      - /home/fran/photoprism/config      
 
     - name: mount FranMedia
       mount:
@@ -52,6 +53,15 @@
         name: "/mnt/FranMedia"
         src: "{{ nas_mount_src }}"
         opts: "{{ nas_mount_opts }}"
+
+    - name: mount FranHomeMedia
+      mount:
+        state: "mounted"
+        fstype: "cifs"
+        name: "/mnt/FranHomeMedia"
+        src: "{{ nas_mount_src_home }}"
+        opts: "{{ nas_mount_opts }}"
+
  
     - name: copy docker-compose files
       copy: src={{ item.src }} dest={{ item.dest }}
@@ -73,7 +83,8 @@
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-wireguard.yml", dest: '/home/fran/wireguard/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-portainer.yml", dest: '/home/fran/portainer/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-portainer.yml", dest: '/home/fran/portainer/docker-compose.yml' }    
-         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-youtubedl.yml", dest: '/home/fran/youtubedl/docker-compose.yml' }              
+         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-youtubedl.yml", dest: '/home/fran/youtubedl/docker-compose.yml' }
+         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-photoprism.yml", dest: '/home/fran/photoprism/docker-compose.yml' }              
          - { src: "{{ playbook_dir }}/update_docker_containers.sh", dest: '/home/fran/update_docker_containers.sh'  }  
 
     - name: Changing perm of "update_docker_containers.sh", adding "+x"

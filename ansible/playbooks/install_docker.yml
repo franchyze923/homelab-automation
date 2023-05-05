@@ -1,0 +1,22 @@
+- hosts: "*"
+
+  vars_files:
+    - ../secret-vars.yml
+    - ../dependencies-vars.yml
+
+  become: yes
+  roles:
+    - geerlingguy.docker
+
+  tasks:
+    - name: apt
+      apt:
+        update_cache: yes
+        upgrade: 'yes'
+
+    - name: Install Dependencies
+      apt:
+        name: "{{ host_dependencies }}"
+        state: latest
+        update_cache: yes      
+
