@@ -101,19 +101,19 @@ sudo docker-compose -f /home/fran/youtubedl/docker-compose.yml --env-file /home/
 sudo docker-compose -f /home/fran/youtubedl/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating Youtubedl!"
 
-echo "Updating PhotoPrism.."
-sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env stop
-sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env rm -f
-sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env pull
-sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home/fran/.env up -d
+echo "Updating PhotoPrism Fran.."
+sudo docker-compose -f /home/fran/photoprism_fran/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/photoprism_fran/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/photoprism_fran/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/photoprism_fran/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating PhotoPrism!"
 # Not hosting this currently 
 
 echo "Updating PhotoPrism2.."
-sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env stop
-sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env rm -f
-sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env pull
-sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env up -d
+sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating PhotoPrism2!"
 
 # echo "Updating Minecraft FTB.."
