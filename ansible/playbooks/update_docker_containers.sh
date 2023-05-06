@@ -109,6 +109,13 @@ sudo docker-compose -f /home/fran/photoprism/docker-compose.yml --env-file /home
 echo "Done updating PhotoPrism!"
 # Not hosting this currently 
 
+echo "Updating PhotoPrism2.."
+sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/photoprism2/docker-compose.yml --env-file /home/fran/.env up -d
+echo "Done updating PhotoPrism2!"
+
 # echo "Updating Minecraft FTB.."
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env stop
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env rm -f
