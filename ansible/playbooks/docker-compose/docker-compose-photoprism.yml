@@ -2,7 +2,7 @@ version: '3.5'
 services:
   photoprism:
     image: photoprism/photoprism:latest
-    # restart: unless-stopped
+    restart: unless-stopped
     stop_grace_period: 10s
     depends_on:
       - mariadb
