@@ -116,6 +116,13 @@ sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-fil
 sudo docker-compose -f /home/fran/photoprism_family/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating PhotoPrism2!"
 
+echo "Updating Tdarr.."
+sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran/.env up -d
+echo "Done updating Tdarr!"
+
 # echo "Updating Minecraft FTB.."
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env stop
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env rm -f

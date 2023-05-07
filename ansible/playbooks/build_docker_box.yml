@@ -73,6 +73,7 @@
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-jellyfin.yml", dest: '/home/fran/jellyfin/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-radarr.yml", dest: '/home/fran/radarr/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-plex.yml", dest: '/home/fran/plex/docker-compose.yml' }
+         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-tdarr.yml", dest: '/home/fran/tdarr/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-minecraft.yml", dest: '/home/fran/minecraft/docker-compose.yml' }  
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-minecraft-ftb.yml", dest: '/home/fran/minecraft-ftb/docker-compose.yml' }                 
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-sabnzbd.yml", dest: '/home/fran/sabnzbd/docker-compose.yml' }

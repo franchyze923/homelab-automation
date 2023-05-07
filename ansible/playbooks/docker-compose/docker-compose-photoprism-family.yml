@@ -15,7 +15,7 @@ services:
       PHOTOPRISM_ADMIN_USER: "admin"                 # admin login username
       PHOTOPRISM_ADMIN_PASSWORD: ${PHOTOPRISM_ADMIN_PASSWORD}          # initial admin password (8-72 characters)
       PHOTOPRISM_AUTH_MODE: "password"               # authentication mode (public, password)
-      PHOTOPRISM_SITE_URL: "http://photoprism.me:2345/"  # server URL in the format "http(s)://domain.name(:port)/(path)"
+      PHOTOPRISM_SITE_URL: "http://photoprism.me:2342/"  # server URL in the format "http(s)://domain.name(:port)/(path)"
       PHOTOPRISM_ORIGINALS_LIMIT: 5000               # file size limit for originals in MB (increase for high-res video)
       PHOTOPRISM_HTTP_COMPRESSION: "gzip"            # improves transfer speed and bandwidth utilization (none or gzip)
       PHOTOPRISM_LOG_LEVEL: "info"                   # log level: trace, debug, info, warning, error, fatal, or panic
@@ -35,9 +35,9 @@ services:
       PHOTOPRISM_UPLOAD_NSFW: "true"                 # allows uploads that MAY be offensive (no effect without TensorFlow)
       PHOTOPRISM_DATABASE_DRIVER: "mysql"            # use MariaDB 10.5+ or MySQL 8+ instead of SQLite for improved performance
       PHOTOPRISM_DATABASE_SERVER: "mariadb:3306"     # MariaDB or MySQL database server (hostname:port)
-      PHOTOPRISM_DATABASE_NAME: "photoprism"         # MariaDB or MySQL database schema name
-      PHOTOPRISM_DATABASE_USER: "photoprism"         # MariaDB or MySQL database user name
-      PHOTOPRISM_DATABASE_PASSWORD: "insecure"       # MariaDB or MySQL database user password
+      PHOTOPRISM_DATABASE_NAME: "photoprismfamily"         # MariaDB or MySQL database schema name
+      PHOTOPRISM_DATABASE_USER: "photoprismfamily"         # MariaDB or MySQL database user name
+      PHOTOPRISM_DATABASE_PASSWORD: ${MARIADB_PASSWORD}         # MariaDB or MySQL database user password
       PHOTOPRISM_SITE_CAPTION: "AI-Powered Photos App"
       PHOTOPRISM_SITE_DESCRIPTION: ""                # meta site description
       PHOTOPRISM_SITE_AUTHOR: ""                     # meta site author
@@ -50,7 +50,7 @@ services:
     volumes:
       # "/host/folder:/photoprism/folder"                # Example
       - "~/Pictures:/photoprism/originals"               # Original media files (DO NOT REMOVE)
-      - ${FRAN_HOME_MEDIA}:/photoprism/originals/FranHomeMedia 
+      - "${FRAN_HOME_MEDIA}/Family Photos:/photoprism/originals/FranHomeMedia/Family Photos" 
       - "./storage:/photoprism/storage"                  # *Writable* storage folder for cache, database, and sidecar files (DO NOT REMOVE)
 
   ## Database Server (recommended)
@@ -69,10 +69,10 @@ services:
     environment:
       MARIADB_AUTO_UPGRADE: "1"
       MARIADB_INITDB_SKIP_TZINFO: "1"
-      MARIADB_DATABASE: "photoprism"
-      MARIADB_USER: "photoprism"
-      MARIADB_PASSWORD: "insecure"
-      MARIADB_ROOT_PASSWORD: "insecure"
+      MARIADB_DATABASE: "photoprismfamily"
+      MARIADB_USER: "photoprismfamily"
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_PASSWORD}
 
   watchtower:
     restart: unless-stopped
