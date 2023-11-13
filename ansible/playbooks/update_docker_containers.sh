@@ -123,6 +123,13 @@ sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran
 sudo docker-compose -f /home/fran/tdarr/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done updating Tdarr!"
 
+echo "Updating Overseer.."
+sudo docker-compose -f /home/fran/overseer/docker-compose.yml --env-file /home/fran/.env stop
+sudo docker-compose -f /home/fran/overser/docker-compose.yml --env-file /home/fran/.env rm -f
+sudo docker-compose -f /home/fran/overseer/docker-compose.yml --env-file /home/fran/.env pull
+sudo docker-compose -f /home/fran/overseer/docker-compose.yml --env-file /home/fran/.env up -d
+echo "Done updating Overseer!"
+
 # echo "Updating Minecraft FTB.."
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env stop
 # sudo docker-compose -f /home/fran/minecraft-ftb/docker-compose.yml --env-file /home/fran/.env rm -f
