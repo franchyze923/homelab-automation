@@ -46,7 +46,8 @@
       - /home/fran/youtubedl/config      
       - /home/fran/photoprism_fran/config      
       - /home/fran/photoprism_family/config      
-      - /home/fran/overseer/config   
+      - /home/fran/overseer/config
+      - /home/fran/audiobookshelf/config
 
     - name: mount FranMedia
       mount:
@@ -89,7 +90,8 @@
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-youtubedl.yml", dest: '/home/fran/youtubedl/docker-compose.yml' }
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-photoprism-fran.yml", dest: '/home/fran/photoprism_fran/docker-compose.yml' }   
          - { src: "{{ playbook_dir }}/docker-compose/docker-compose-photoprism-family.yml", dest: '/home/fran/photoprism_family/docker-compose.yml' }             
-         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-overseer.yml", dest: '/home/fran/overseer/docker-compose.yml' }    
+         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-overseer.yml", dest: '/home/fran/overseer/docker-compose.yml' }  
+         - { src: "{{ playbook_dir }}/docker-compose/docker-compose-audiobookshelf.yml", dest: '/home/fran/audiobookshelf/docker-compose.yml' }  
          - { src: "{{ playbook_dir }}/update_docker_containers.sh", dest: '/home/fran/update_docker_containers.sh'  }  
 
     - name: Changing perm of "update_docker_containers.sh", adding "+x"

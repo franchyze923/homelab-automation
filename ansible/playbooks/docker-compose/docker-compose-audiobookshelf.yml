@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    ports:
+      - 13378:80
+    volumes:
+      - </home/fran/audiobookshelf:/audiobooks
+      - </home/fran/audiobookshelf:/podcasts
+      - </home/fran/audiobookshelf/config:/config
+      - </home/fran/audiobookshelf:/metadata
