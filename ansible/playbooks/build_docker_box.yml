@@ -48,6 +48,9 @@
       - /home/fran/photoprism_family/config      
       - /home/fran/overseer/config
       - /home/fran/audiobookshelf/config
+      - /home/fran/audiobookshelf/audiobooks
+      - /home/fran/audiobookshelf/metadata
+      - /home/fran/audiobookshelf/podcasts
 
     - name: mount FranMedia
       mount:

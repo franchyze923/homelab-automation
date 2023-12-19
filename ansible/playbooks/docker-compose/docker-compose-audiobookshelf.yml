@@ -5,7 +5,7 @@ services:
     ports:
       - 13378:80
     volumes:
-      - </home/fran/audiobookshelf:/audiobooks
-      - </home/fran/audiobookshelf:/podcasts
-      - </home/fran/audiobookshelf/config:/config
-      - </home/fran/audiobookshelf:/metadata
+      - /home/fran/audiobookshelf/audiobooks:/audiobooks
+      - /home/fran/audiobookshelf/podcasts:/podcasts
+      - /home/fran/audiobookshelf/config:/config
+      - /home/fran/audiobookshelf/metadata:/metadata
