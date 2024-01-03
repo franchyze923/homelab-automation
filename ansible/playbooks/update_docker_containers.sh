@@ -23,13 +23,13 @@ sudo docker-compose -f /home/fran/sabnzbd/docker-compose.yml --env-file /home/fr
 sudo docker-compose -f /home/fran/sabnzbd/docker-compose.yml --env-file /home/fran/.env up -d
 echo "Done Updating SabNZB!"
 
-# Hosting on TrueNas Scale now
-# echo "Updating lidarr..."
-# sudo docker-compose -f /home/fran/lidarr/docker-compose.yml stop
-# sudo docker-compose -f /home/fran/lidarr/docker-compose.yml rm -f
-# sudo docker-compose -f /home/fran/lidarr/docker-compose.yml pull
-# sudo docker-compose -f /home/fran/lidarr/docker-compose.yml up -d
-# echo "Done Updating lidarr!"
+Hosting on TrueNas Scale now
+echo "Updating lidarr..."
+sudo docker-compose -f /home/fran/lidarr/docker-compose.yml stop
+sudo docker-compose -f /home/fran/lidarr/docker-compose.yml rm -f
+sudo docker-compose -f /home/fran/lidarr/docker-compose.yml pull
+sudo docker-compose -f /home/fran/lidarr/docker-compose.yml up -d
+echo "Done Updating lidarr!"
 
 echo "Updating sonarr..."
 sudo docker-compose -f /home/fran/sonarr/docker-compose.yml --env-file /home/fran/.env stop
