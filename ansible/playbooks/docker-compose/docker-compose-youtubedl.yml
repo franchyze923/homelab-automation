@@ -12,11 +12,10 @@ services:
         volumes:
             - ./appdata:/app/appdata
             - ./audio:/app/audio
-            - ./video:/app/video
             - ./subscriptions:/app/subscriptions
             - ./users:/app/users
             - ${FRAN_MUSIC}/Individual Songs/youtube_dl:/app/music
-            - ${FRAN_MEDIA}/Music_Videos/youtube_dl:/app/video
+            - ${FRAN_MEDIA}/Videos/youtube_dl:/app/video
 
         ports:
             - "8998:17442"
